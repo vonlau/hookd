@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hookd</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=DM+Mono:wght@400;500&family=Figtree:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap head-row">
+    <a class="logo" href="#home" aria-label="Hookd home"><b>Hook<i>d</i></b><span>crochet in 3D</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="#start">Start here</a>
+      <a href="#stitches">Stitches</a>
+      <a href="#projects">Projects</a>
+      <a href="#help">Help</a>
+      <a href="#about">About</a>
+      <a href="#search">Search</a>
+    </nav>
+    <div class="prefs">
+      <span class="seg" role="group" aria-label="Stitch names">
+        <button type="button" data-terms="us" aria-pressed="true">US terms</button>
+        <button type="button" data-terms="uk" aria-pressed="false">UK</button>
+      </span>
+      <span class="seg" role="group" aria-label="Hook hand">
+        <button type="button" data-hand="right" aria-pressed="true">Right-handed</button>
+        <button type="button" data-hand="left" aria-pressed="false">Left</button>
+      </span>
+    </div>
+  </div>
+</header>
+<main id="view" class="wrap" tabindex="-1"></main>
+<footer class="site-foot">
+  <div class="wrap">
+    <span>Hookd prototype. Stitch models are simplified and not yet checked against real crochet.</span>
+    <span><a href="#about-site">About this site</a> · <a href="#about-contact">Contact and feedback</a></span>
+  </div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="scenes.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
