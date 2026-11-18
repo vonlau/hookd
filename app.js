@@ -133,7 +133,7 @@
     home: () => `<div class="stack-lg">
       <section class="hero">
         <p class="eyebrow">Hookd: crochet in 3D</p>
-        <h1>Crochet you can turn around.</h1>
+        <h1>Crochet you can <em>turn around.</em></h1>
         <p class="lede">Every stitch is a 3D model. Pause on any step, drag to look from any side, and see exactly where the hook goes.</p>
         ${searchBox('q-home', true)}
         <div id="live" class="stack"></div>
@@ -197,12 +197,12 @@
 
     'help-loops': () => article('help-loops', `
       <p class="lede">Unless a pattern says otherwise, the hook goes under <strong>both loops</strong> at the top of the stitch.</p>
-      <figure><svg viewBox="0 0 520 190" role="img" aria-label="Side view of the top of a stitch. The hook passes under both the front loop and the back loop." style="width:100%;height:auto;color:var(--ink)">
+      <figure><svg viewBox="0 0 400 190" role="img" aria-label="Side view of the top of a stitch. The hook passes under both the front loop and the back loop." style="width:100%;height:auto;color:var(--ink)">
         <path d="M150 140V95M250 140V95" stroke="currentColor" stroke-width="3" opacity=".35"/>
         <circle cx="150" cy="72" r="20" fill="none" stroke="currentColor" stroke-width="8"/><circle cx="250" cy="72" r="20" fill="none" stroke="currentColor" stroke-width="8"/>
         <path d="M60 112H330" stroke="#F2B100" stroke-width="8" stroke-linecap="round"/><path d="M318 98l22 14-22 14" fill="none" stroke="#F2B100" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
-        <g fill="currentColor" font-family="Figtree, sans-serif" font-size="15" text-anchor="middle"><text x="150" y="20">front loop</text><text x="150" y="40">(nearest you)</text>
-        <text x="250" y="40">back loop</text><text x="200" y="172">the hook goes under both</text></g></svg>
+        <g fill="currentColor" font-family="Oswald, sans-serif" font-size="21" text-anchor="middle"><text x="130" y="20">front loop</text><text x="130" y="44">(nearest you)</text>
+        <text x="270" y="44">back loop</text><text x="200" y="176">the hook goes under both</text></g></svg>
         <figcaption>Looking along the row, from the side. Gold shows the path of the hook.</figcaption></figure>
       <h2>Find the V</h2>
       <p>Look down at the top edge of your work. Each stitch ends in a sideways V. The side of the V nearest you is the front loop. The far side is the back loop.</p>
@@ -299,14 +299,14 @@
   function playerHTML(name, isProject) {
     return `<section class="player" aria-label="3D player">
       <div class="stage-col">
-        <div class="stage" id="stage" data-look="${prefs.look}">
+        <div class="stage-frame"><div class="stage" id="stage" data-look="${prefs.look}">
           <canvas id="cv" tabindex="0" role="img" aria-label="3D model of ${esc(name)}. Drag to rotate, scroll or pinch to zoom, arrow keys to turn."></canvas>
           <div class="overlay target-label" id="tlabel" hidden></div>
           <div class="overlay counter" id="counter"></div>
           <button class="reset" type="button" data-view="reset">Reset view</button>
           <div class="overlay hint">Drag to look around. Scroll or pinch to zoom.</div>
-        </div>
-        <div class="transport">
+        </div></div>
+        <div class="deck"><div class="transport">
           <button class="icon-btn" type="button" id="b-prev" aria-label="Previous step">${icon('prev')}</button>
           <button class="icon-btn main" type="button" id="b-play" aria-label="Pause">${icon('pause')}</button>
           <button class="icon-btn" type="button" id="b-replay" aria-label="Replay this step">${icon('replay')}</button>
@@ -318,7 +318,7 @@
           ${seg('view', 'View', [['front', 'Front'], ['top', 'Top'], ['side', 'Side'], ['back', 'Back']], '')}
           ${seg('look', 'Look', [['flat', 'Flat'], ['realistic', 'Realistic'], ['clay', 'Clay']], prefs.look)}
           <label class="check" for="rep"><input id="rep" type="checkbox"${prefs.repeat ? ' checked' : ''}>Repeat step</label>
-        </div>
+        </div></div>
         <p class="proto-note">Prototype model. Shapes are simplified and not yet checked by an experienced crocheter.</p>
       </div>
       <div class="steps-col"><ol class="steps" id="steps"></ol>
